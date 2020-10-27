@@ -14,7 +14,7 @@ Two datasets are required to run this script: shapefiles of the UK and estimates
 
 ### Software requirements
 
-* The R scripts within this repository require the following packages: `rgdal, rmapshaper, broom, tidyverse, ggplot2`.  
+* The R scripts within this repository require the following packages: `rgdal, broom, tidyverse, ggplot2`.  
 
 
 ### Usage
