@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 # 
-# Script to produce a map of a particular metric
+# Script to produce a map of R
 
 suppressWarnings(suppressMessages(library(tidyverse))) # for tidy goodness
 suppressWarnings(suppressMessages(library(ggplot2))) # for ggplot()
