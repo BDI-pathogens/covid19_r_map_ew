@@ -33,3 +33,7 @@ make r_date="2020-04-23" map
 * `make data_covid19` will clean the R(t) COVID19 data (automatically called by `make map`).  
 * `make data_shapefile` will clean the Shapefile (automatically called by `make map`).  Within this project, this script simply moves the shapefiles to the `data/processed` folder but can include more elaborate scripts to simplify the shapefiles if necessary.  
 
+
+### Example output
+
+![./output/figures/map_r_ew_2020-07-21.png](./output/figures/map_r_ew_2020-07-21.png)
