@@ -26,6 +26,7 @@ make r_date="2020-04-23" map
 ```
 
 * Simply calling `make map` will produce a map for for 21st July 2020 (`2020-07-21`) by default.  
+* Dates can also be specified by day after 31st Dec 2019 (such that 1 is 1st day of the year of 2020): `make r_date=4 map`.  
 
 
 ### Additional commands

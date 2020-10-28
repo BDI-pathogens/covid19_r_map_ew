@@ -17,7 +17,20 @@ input_covid19_data_file <- args[1]
 date_to_plot <- args[2]
 input_shp_dir <- args[3]
 input_shp_filenames <- args[4]
-output_fig_filename <- args[5]
+output_fig_dir <- args[5]
+
+# Process `date_to_plot`, if an integer interpret as "day after 31st Dec 2019"
+# else a string representation of a date to be read by as.Date().  
+
+if( suppressWarnings(!is.na(as.numeric(date_to_plot)))){
+    cat("\tInterpreting as day-of-the-year\n")
+    day_of_year <- as.numeric(date_to_plot)
+    date_to_plot <- as.Date(day_of_year, origin = "2019-12-31")
+    
+}else{
+    date_to_plot <- as.Date(date_to_plot)
+    day_of_year <- as.integer(as.Date(date_to_plot) - as.Date("2019-12-31"))
+}
 
 
 #################
@@ -35,7 +48,7 @@ df_metadata$id <- as.character(0:(NROW(df_metadata) - 1))
 df_rt_ltla <- read.csv(file.path(input_covid19_data_file), stringsAsFactors = FALSE)
 df_rt_ltla$date <- as.Date(df_rt_ltla$date)
 
-df_rt_ltla_sub <- subset(df_rt_ltla, date == as.Date(date_to_plot))
+df_rt_ltla_sub <- subset(df_rt_ltla, date == date_to_plot)
 df_rt_ltla_sub$lad19cd <- df_rt_ltla_sub$ltla_code
 
 #################
@@ -56,6 +69,10 @@ CAPTION <- paste0(
     "Data from: https://bdi-pathogens.shinyapps.io/LocalCovidTracker/\n", 
     "Date accessed: 27 October 2020")
 
+output_fig_filename <- file.path(
+    paste0("map_r_ew_d", sprintf("%03d", day_of_year), "_", date_to_plot, ".png")
+    )
+
 #################
 # Create map
 # ---------------
@@ -70,5 +87,5 @@ map <- ggplot(df_shp,
     labs(
         title = TITLE, subtitle = SUBTITLE, caption = CAPTION)
 
-ggsave(file.path(output_fig_filename), map, 
+ggsave(file.path(output_fig_dir, output_fig_filename), map, 
     height = 6, width = 6, units = "in")

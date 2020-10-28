@@ -30,4 +30,4 @@ map: data_covid19 data_shapefile
 		"$(r_date)" \
 		"data/processed/shp" \
 		"${output_shp_filenames}" \
-		"output/figures/map_r_ew_$(r_date).png"
+		"output/figures/"
