@@ -87,5 +87,7 @@ map <- ggplot(df_shp,
     labs(
         title = TITLE, subtitle = SUBTITLE, caption = CAPTION)
 
+options(bitmapType = 'cairo', device = "png")
+
 ggsave(file.path(output_fig_dir, output_fig_filename), map, 
     height = 6, width = 6, units = "in")
