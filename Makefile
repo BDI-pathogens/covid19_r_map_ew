@@ -31,3 +31,14 @@ map: data_covid19 data_shapefile
 		"data/processed/shp" \
 		"${output_shp_filenames}" \
 		"output/figures/"
+
+
+# Create a map of R in England and Wales
+map_only:
+	Rscript src/visualisation/create_map_r_ew.R \
+		"data/processed/${localcovidtracker_filename}" \
+		"$(r_date)" \
+		"data/processed/shp" \
+		"${output_shp_filenames}" \
+		"output/figures/"
+
