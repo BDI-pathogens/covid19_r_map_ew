@@ -29,11 +29,11 @@ make r_date="2020-04-23" map
 * Dates can also be specified by day after 31st Dec 2019 (such that 1 is 1st day of the year of 2020): `make r_date=4 map`.  
 
 
-### Additional commands
+### Additional commands and notes
 
 * `make data_covid19` will clean the R(t) COVID19 data (automatically called by `make map`).  
 * `make data_shapefile` will clean the Shapefile (automatically called by `make map`).  Within this project, this script simply moves the shapefiles to the `data/processed` folder but can include more elaborate scripts to simplify the shapefiles if necessary.  
-
+* Generation of these plots on Oxford's Rescomp Cluster requires adjustments to the plotting script.  See the commented command at the bottom of `src/visualisation/create_map_r_ew.R` for plotting on Rescomp.  The script `create_maps_rescomp.sh` will run these plotting commands in parallel (across multiple dates) on Rescomp.  
 
 ### Output
 
