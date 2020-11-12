@@ -62,7 +62,7 @@ df_shp <- left_join(df_shp, subset(df_rt_ltla_sub, select = c("R", "lad19cd")), 
 # Plotting parameters
 # ----------
 
-R_LIMITS <- c(0, 3.5)
+R_LIMITS <- c(0, 4.5)
 TITLE <- "Instantaneous reproduction number, R"
 SUBTITLE <- paste("England and Wales; estimate on", date_to_plot)
 CAPTION <- paste0(
@@ -87,7 +87,8 @@ map <- ggplot(df_shp,
     labs(
         title = TITLE, subtitle = SUBTITLE, caption = CAPTION)
 
-options(bitmapType = 'cairo', device = "png")
+# Turn this option on for plotting on Rescomp
+# options(bitmapType = 'cairo', device = "png")
 
 ggsave(file.path(output_fig_dir, output_fig_filename), map, 
     height = 6, width = 6, units = "in")
