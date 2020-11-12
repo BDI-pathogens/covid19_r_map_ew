@@ -1,11 +1,16 @@
 
+# Default date for plotting
+r_date="2020-07-21"
 
+# Filename of raw shapefiles (see readme for where to access these)
 raw_shp_dir="Local_Authority_Districts__December_2019__Boundaries_UK_BUC-shp"
-output_shp_filenames="uk_2019_local_authority_districts"
 
+# Filename of raw estimates of R from LocalCovidTracker
 localcovidtracker_filename="estimated.R.ltlas.2020-10-27.csv"
 
-r_date="2020-07-21"
+# Filename of cleaned shapefiles
+output_shp_filenames="uk_2019_local_authority_districts"
+
 
 # Clean the Covid19 data from the LocalCovidTracker
 data_covid19:
@@ -33,7 +38,7 @@ map: data_covid19 data_shapefile
 		"output/figures/"
 
 
-# Create a map of R in England and Wales
+# Create a map of R in England and Wales (no prerequisite cleaning steps)
 map_only:
 	Rscript src/visualisation/create_map_r_ew.R \
 		"data/processed/${localcovidtracker_filename}" \
