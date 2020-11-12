@@ -39,4 +39,4 @@ make r_date="2020-04-23" map
 
 Example output from calling `make map` is the following file that is produced in `output/figures`.  
 
-![./output/figures/map_r_ew_2020-07-21.png](./output/figures/map_r_ew_2020-07-21.png)
+![./output/figures/map_r_ew_d203_2020-07-21.png](./output/figures/map_r_ew_d203_2020-07-21.png)
