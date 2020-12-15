@@ -44,6 +44,11 @@ map_only:
 		"data/processed/${localcovidtracker_filename}" \
 		"$(r_date)" \
 		"data/processed/shp" \
-		"${output_shp_filenames}" \
 		"output/figures/"
 
+
+adjacency_matrix:
+	Rscript src/data/make_adjacency_from_shapefile.R \
+		"data/processed/shp/" \
+		"data/processed/lad19cd_adjacency_matrix.csv" \
+		"data/processed/neighbours_201215.rda"

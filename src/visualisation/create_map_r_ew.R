@@ -16,8 +16,7 @@ args <- commandArgs(trailingOnly = TRUE)
 input_covid19_data_file <- args[1]
 date_to_plot <- args[2]
 input_shp_dir <- args[3]
-input_shp_filenames <- args[4]
-output_fig_dir <- args[5]
+output_fig_dir <- args[4]
 
 # Process `date_to_plot`, if an integer interpret as "day after 31st Dec 2019"
 # else a string representation of a date to be read by as.Date().  
