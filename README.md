@@ -3,6 +3,7 @@
 
 R code for creating a map of R(t) for England and Wales using data from [LocalCovidTracker](https://bdi-pathogens.shinyapps.io/LocalCovidTracker/).  
 
+![./output/figures/map_r_ew_d203_2020-07-21.png](./output/figures/map_r_ew_d203_2020-07-21.png)
 
 ### Data requirements
 
@@ -37,6 +38,4 @@ make r_date="2020-04-23" map
 
 ### Output
 
-Example output from calling `make map` is the following file that is produced in `output/figures`.  
-
-![./output/figures/map_r_ew_d203_2020-07-21.png](./output/figures/map_r_ew_d203_2020-07-21.png)
+Example output from calling `make map` is the following file that is produced in `output/figures` and shown at the top of this README.md file.  
